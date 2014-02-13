@@ -1,0 +1,67 @@
+
+Problem 1 : Book Classification
+===============================
+
+Description of your approach, methodology: 
+	1. After performing detailed analysis I found that the attributes for books contained only one relevant detail which was the Book 		Name, BookID cannot provide any information regarding what category a book belongs to plus on checking the book author field I 		found that there are too many unique entries which will not be very useful for categorizing books. Hence I decided to mainly focus of 		the name for predicting the category
+	2. After finalizing how I would be using the data I started to read about Text based classification approaches and found that 		decision tree and probability based classifiers are very useful when the attributes are too few for performing classfication
+	3. I decided to use WEKA library as it already contains implementations of these models. I just had to do preprocessing of the data 		and get the data into a format which is given as an input to these models - ARFF
+	4. I read the input file and divided it into train and test ARFF files by only extracting required attributes from the file and 	performing some preprocessing on raw data.
+	6. Once the train and test files are generated the train file is given as an input for generating the model. 
+	7. After evaluating results of various models I finally decided to use Naive Bayes and J48 model as they provided with the most 	accurate results
+	8. I also applied StringToWordVector conversion on the file to convert all string into numeric values which these evaluating models 		need, this filtered data is then used to generate the model and  the test instances are run on the model for performing classfication
+	9. Once classification of all test instances are generated we write them back to output file as mentioned in requirement document
+
+Experimentation process to improve the Classification Accuracy: 
+	1. Book Author Field
+	-Tried keeping and removing this field while performing classification and the result was slightly better when this field was 		removed from the file used for building the model. The reason can be most of books had unique authors this feature did not help much 		in the process of classification. Hence I decided not to consider this feature 
+	 
+	2. Different Models:
+	Performed classification using 2 different models Naive Bayes and J48, former being a probability based model and latter being a 		decision tree model, I found that the Naive Bayes performed much better and gave very high accuracy and when compared to J48.
+
+Guidelines on how to run your code:
+	I have created a JAR file which requires 2 input parameters when running from the terminal:
+		java -jar <input1.txt>	<1 or 2> (1-Naive Bayes Model/2-J48 Model) 	
+		-parameter 1: normal input file
+		-parameter 2: selecting model to perform classification
+
+Instructions to install any special packages or tools required by your code:
+	I have provided the WEKA library within the JAR file itself so if you are running JAR file you don't need to install any special 		package or library. In case you are running Java Main file then you would need to include WEKA library JAR file within classpath
+
+Problem 2 : Additional Feature Input
+=====================================
+
+Description of your approach, methodology: 
+	1. Taking my solution from problem 1, I extended it such that it takes an additional file as an input which contains additional 	feature set for the books.
+	2. I decided to add this new feature which will provide some more information regarding each book and help in our prediction
+	2. I stored the data into HashMap where my key was BookID and value was the table of contents.
+	3. The text present as a part of table of contents was very noisy hence I had to use some normalization like:
+		-converting all text to lower case
+		-removing all special characters and numbers
+		-removing stop words
+	4. While generating the train and test ARFF files I added this additional data, I used the bookID from the train and test files as my 		key for looking into the hashmap and getting the table of contents
+	5. Once train and test ARFF files are generated I call my classify function which takes train file as input and generates a model and 		the test file is run an instance at a time to perform classfication
+	6. Once all classification is performed I write back all the results to output2.txt file as specified in the requirement document
+
+Experimentation process to improve the Classification Accuracy: 
+	1. Book Author Field
+	-Tried keeping and removing this field while performing classification and the result was slightly better when this field was 		removed from the file used for building the model. The reason can be most of books had unique authors this feature did not help much 		in the process of classification. Hence I decided not to consider this feature 
+	 
+	2. Text Processing
+	1. Stopwords: Removing stopwords from the file helped in reducing number of unique words and make the table of contents more 		relevant
+	2. Stemming: Tried performing stemming on the text but did not yield desired results when compared to not performing yielding, hence 		decided to skip stemming on text
+
+	3. Different Models:
+	Performed classification using 2 different models Naive Bayes and J48, former being a probability based model and latter being a 		decision tree model, I found that the Naive Bayes performed much better and gave very high accuracy and when compared to J48.
+
+	4. Additional Feature File: Including this file provided more strength in the classification problem. Table of contents defined each 		of the books with a certain sets of words and model contained information about which category of book is most likely to have which 		types of words within the table of contents thus helping out more with the classification
+
+Guidelines on how to run your code:
+	I have created a JAR file which requires 3 input parameters when running from the terminal:
+		java -jar <input1.txt>	<input2.txt> <1 or 2> (1-Naive Bayes Model/2-J48 Model) 	
+		-parameter 1: normal input file
+		-parameter 2: additional feature input file
+		-parameter 3: selecting model to perform classification
+ 
+Instructions to install any special packages or tools required by your code:
+	I have provided the WEKA library within the JAR file itself so if you are running JAR file you don't need to install any special 	package or library. In case you are running Java Main file then you would need to include WEKA library JAR file within classpath
