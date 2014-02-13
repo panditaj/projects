@@ -1,0 +1,5 @@
+1. Install Python 2.7 compilor and a Python IDE
+2. Open the IDE and select the project to open it in the IDE
+3. Include the in-links and the simple-graph files in the folder which us given as input
+4. The program will run in the python shell using the above files and show the ouput as required
+5. The output is copy pasted from the shell
