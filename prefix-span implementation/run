@@ -1,4 +1,0 @@
-#!/bin/bash
-
-javac MainPrefixSpan.java
-java MainPrefixSpan "$1" "$2" "$3"
