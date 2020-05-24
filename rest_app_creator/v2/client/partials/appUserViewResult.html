@@ -1,0 +1,16 @@
+<fieldset>
+    <legend></legend>
+    <div>
+        <button class="btn btn-primary btn-sm" ng-click="loadPreviousLevelData()">Back</button>
+        <button class="btn btn-primary btn-sm" ng-click="reTest()">ReTest</button>
+        <button class="btn btn-primary btn-sm" ng-click="showHome()">Home</button>
+        <div>&NonBreakingSpace;</div>
+        <div class="list-group">
+            <div ng-repeat="(key, value) in levelData1">
+                <a class="btn-link list-group-item" ng-click="loadNextLevel(key)">
+                    <p class="list-group-item-text">{{value}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</fieldset>

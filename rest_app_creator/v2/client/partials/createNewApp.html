@@ -1,0 +1,45 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend></legend>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Application Name</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newApp.name" placeholder="Name" type="text">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Description</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newApp.description" placeholder="Description" type="text">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Service</label>
+
+            <div class="col-lg-10">
+                <select class="form-control" ng-model="newApp.api" ng-change="updateUrl()"
+                        ng-options="service.name for service in apiServices">
+                    <option value="">-- Choose Service --</option>
+                </select>
+            </div>
+            <button class="btn btn-link" ng-click="createService('/createApp')">Add new API Service</button>
+            <button class="btn btn-link" ng-click="editService()">Edit Services</button>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">URL</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newApp.url" placeholder="URL" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default" ng-click="back('/devHome')">Cancel</button>
+                <button class="btn btn-primary" type="submit" ng-click="createApplication()">Create</button>
+                <!--<button class="btn btn-primary" type="submit">Publish</button>-->
+            </div>
+        </div>
+    </fieldset>
+</form>

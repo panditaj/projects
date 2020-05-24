@@ -1,0 +1,15 @@
+<fieldset>
+    <legend></legend>
+    <div>
+        <button class="btn btn-primary btn-sm" ng-click="back()">Back</button>
+        <button style="float: right" class="btn btn-primary btn-sm" ng-click="addParameter()">Add</button>
+    </div>
+    <div>&NonBreakingSpace;</div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="param in parameters">
+            <strong>{{param.label}}</strong>
+            <Button class="btn-link" style="float: right" ng-click="deleteParam(param._id)">Delete</Button>
+            <Button class="btn-link" style="float: right" ng-click="viewParam(param._id)">View</Button>
+        </li>
+    </ul>
+</fieldset>

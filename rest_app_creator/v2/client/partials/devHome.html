@@ -1,0 +1,26 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend></legend>
+        <div class="alert alert-info" ng-show="publishStatus">
+            {{message}}
+        </div>
+        <div>
+            <button class="btn btn-primary btn-sm" ng-click="logoutUser('/')">Logout</button>
+            <button class="btn btn-primary btn-sm" ng-click="createApplication('/createApp')">Create</button>
+        </div>
+        <div>&NonBreakingSpace;</div>
+        <div class="panel panel-primary" ng-repeat="application in applications">
+            <div class="panel-heading">
+                {{application.name}}
+                [<a class="btn-link" ng-click="publishApp(application._id)">Publish</a>]
+                [<a class="btn-link" ng-click="unpublishApp(application._id)">Unpublish</a>]
+            </div>
+            <ul class="nav nav-pills">
+                <li><a class="btn btn-link" ng-click="editApplication(application._id)">Edit</a></li>
+                <li><a class="btn btn-link" ng-click="deleteApplication(application._id)">Remove</a></li>
+                <li><a class="btn btn-link" ng-click="testApplicationUserView(application._id)">User View</a></li>
+                <li><a class="btn btn-link" ng-click="testApplication(application._id)">Test</a></li>
+            </ul>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,14 @@
+<fieldset xmlns="http://www.w3.org/1999/html">
+    <legend></legend>
+    <div>
+        <button class="btn btn-primary btn-sm" ng-click="back()">Back</button>
+    </div>
+    <div>&NonBreakingSpace;</div>
+    <div class="list-group" ng-repeat="service in serviceList">
+        <a class="list-group-item btn-link" ng-click="editSelectedService(service._id)">
+            <h4 class="list-group-item-heading">{{service.name}}</h4>
+
+            <p class="list-group-item-text">{{service.url}}</p>
+        </a>
+    </div>
+</fieldset>

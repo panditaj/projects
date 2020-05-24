@@ -1,0 +1,3 @@
+   Root User:     admin
+   Root Password: kkZGZ1EsP-7i
+   Database Name: v2

@@ -1,0 +1,19 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Testing Application</legend>
+        <div class="form-group" ng-repeat="inputParam in inputParams">
+            <label class="col-lg-2 control-label">{{inputParam.label}}</label>
+            <div class="col-lg-10">
+                <input class="form-control" type="text" ng-model="appInputs[inputParam.name]">
+                <span class="help-block">Sample Value: {{inputParam.defaultValue}}</span>
+                <span class="help-block">Format: {{inputParam.format}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default" ng-click="back()">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-click="run()">Run</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

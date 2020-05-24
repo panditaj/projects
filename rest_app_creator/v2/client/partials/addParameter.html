@@ -1,0 +1,181 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend></legend>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Name</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newParam.name" id="inputName" placeholder="Name" type="text">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Label</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newParam.label" id="inputLabel" placeholder="Label" type="text">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Parameter Type</label>
+
+            <div class="col-lg-10">
+                <select ng-model="newParam.paramType" class="form-control"
+                        ng-options="param for param in parameters">
+                    <option value="">-- Choose Parameter --</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">DataType</label>
+
+            <div class="col-lg-10">
+                <select ng-model="newParam.dataType" class="form-control" ng-options="datatype for datatype in dataTypes">
+                    <option value="">---Choose Datatype---</option>
+                </select>
+            </div>
+        </div>
+        <!---->
+        <div ng-show="newParam.dataType=='Text'">
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Order</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.order" placeholder="Order" type="number" min="0">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Default Value</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.defaultValue" placeholder="default" type="text">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Format</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.format" placeholder="format" type="text">
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div ng-show="newParam.dataType=='Number'">
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Order</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.order" placeholder="Order" type="number" min="0">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Default Value</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.defaultValue" type="number">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Format</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.format" type="number">
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div ng-show="newParam.dataType=='Date'">
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Order</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.order" placeholder="Order" type="number" min="0">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Default Value</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.defaultValue" type="date">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Format</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.format" type="date">
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div ng-show="newParam.dataType=='Enum'">
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Order</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.order" placeholder="Order" type="number" min="0">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Default Value</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.defaultValue" placeholder="default" type="text">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label class="col-lg-2 control-label">Format</label>
+
+                <div class="col-lg-10">
+                    <input class="form-control" ng-model="newParam.format" placeholder="format" type="text">
+                </div>
+            </div>
+        </div>
+<!--
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Order</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newParam.order" placeholder="Order" type="number" min="0">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Default Value</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newParam.defaultValue" placeholder="default" type="text">
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Format</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="newParam.format" placeholder="format" type="text">
+            </div>
+        </div>
+-->
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">User Visibility</label>
+
+            <div class="col-lg-10">
+                <div class="radio">
+                    <label>
+                        <input ng-model="newParam.userVisibility" id="optionYes" value="yes" checked="" type="radio">
+                        Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input ng-model="newParam.userVisibility" id="optionNo" value="no" type="radio">
+                        No
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default" ng-click="back()">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-click="registerParam()">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

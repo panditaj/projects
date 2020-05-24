@@ -1,0 +1,22 @@
+<fieldset>
+    <legend></legend>
+    <div>
+        <button class="btn btn-primary btn-sm" ng-click="back()">Back</button>
+    </div>
+    <div>&NonBreakingSpace;</div>
+    <ul class="list-group">
+        <div class="form-group" ng-repeat="key in keys">
+            <div>
+                <li class="list-group-item">
+                    <strong>{{key.buttonName}}</strong>
+                    <button class="btn-link" ng-disabled="key.makeSetDisabled" style="float: right"
+                            ng-click="confirmLevelData(key.buttonName)">Set
+                    </button>
+                    <button class="btn-link" ng-disabled="key.makeMoreOptionsDisabled" style="float: right"
+                            ng-click="showNextLevelData(key.buttonName)">More Levels
+                    </button>
+                </li>
+            </div>
+        </div>
+    </ul>
+</fieldset>

@@ -1,0 +1,98 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+info using npm@1.1.21
+info using node@v0.6.17
+verbose config file /home/ajay/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose caching /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/package.json
+verbose loadDefaults OpenShift-Sample-App@1.0.0
+verbose readDependencies: using package.json deps
+verbose where, deps [ '/home/ajay/Dropbox/CS_Courses/DMBS/project/v2',
+verbose where, deps   [ 'body-parser', 'ejs', 'express', 'express-session' ] ]
+verbose from cache /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/package.json
+info preinstall OpenShift-Sample-App@1.0.0
+verbose caching /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/express-session/package.json
+verbose loadDefaults express-session@1.9.0
+verbose caching /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/express/package.json
+verbose loadDefaults express@4.8.8
+verbose caching /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/body-parser/package.json
+verbose loadDefaults body-parser@1.9.0
+verbose caching /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/ejs/package.json
+verbose loadDefaults ejs@1.0.0
+verbose from cache /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/package.json
+verbose readDependencies: using package.json deps
+verbose from cache /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/ejs/package.json
+verbose from cache /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/express-session/package.json
+verbose from cache /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/express/package.json
+verbose from cache /home/ajay/Dropbox/CS_Courses/DMBS/project/v2/node_modules/body-parser/package.json
+verbose cache add [ 'body-parser@^1.7.0', null ]
+silly cache add: name, spec, args [ undefined,
+silly cache add: name, spec, args   'body-parser@^1.7.0',
+silly cache add: name, spec, args   [ 'body-parser@^1.7.0', null ] ]
+verbose parsed url { pathname: 'body-parser@^1.7.0',
+verbose parsed url   path: 'body-parser@^1.7.0',
+verbose parsed url   href: 'body-parser@^1.7.0' }
+silly cache add: name, spec, args [ 'body-parser', '^1.7.0', [ 'body-parser', '^1.7.0' ] ]
+verbose parsed url { pathname: '^1.7.0', path: '^1.7.0', href: '^1.7.0' }
+verbose addNamed [ 'body-parser', '^1.7.0' ]
+verbose addNamed [ null, null ]
+info addNameTag [ 'body-parser', '^1.7.0' ]
+verbose cache add [ 'ejs@^1.0.0', null ]
+silly cache add: name, spec, args [ undefined, 'ejs@^1.0.0', [ 'ejs@^1.0.0', null ] ]
+verbose parsed url { pathname: 'ejs@^1.0.0',
+verbose parsed url   path: 'ejs@^1.0.0',
+verbose parsed url   href: 'ejs@^1.0.0' }
+silly cache add: name, spec, args [ 'ejs', '^1.0.0', [ 'ejs', '^1.0.0' ] ]
+verbose parsed url { pathname: '^1.0.0', path: '^1.0.0', href: '^1.0.0' }
+verbose addNamed [ 'ejs', '^1.0.0' ]
+verbose addNamed [ null, null ]
+info addNameTag [ 'ejs', '^1.0.0' ]
+verbose raw, before any munging body-parser
+verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+verbose url resolved https://registry.npmjs.org/body-parser
+http GET https://registry.npmjs.org/body-parser
+verbose raw, before any munging ejs
+verbose url resolving [ 'https://registry.npmjs.org/', './ejs' ]
+verbose url resolved https://registry.npmjs.org/ejs
+http GET https://registry.npmjs.org/ejs
+verbose already installed in /home/ajay/Dropbox/CS_Courses/DMBS/project/v2 skipping express@~4.8.7
+verbose cache add [ 'express-session@^1.7.6', null ]
+silly cache add: name, spec, args [ undefined,
+silly cache add: name, spec, args   'express-session@^1.7.6',
+silly cache add: name, spec, args   [ 'express-session@^1.7.6', null ] ]
+verbose parsed url { pathname: 'express-session@^1.7.6',
+verbose parsed url   path: 'express-session@^1.7.6',
+verbose parsed url   href: 'express-session@^1.7.6' }
+silly cache add: name, spec, args [ 'express-session', '^1.7.6', [ 'express-session', '^1.7.6' ] ]
+verbose parsed url { pathname: '^1.7.6', path: '^1.7.6', href: '^1.7.6' }
+verbose addNamed [ 'express-session', '^1.7.6' ]
+verbose addNamed [ null, null ]
+info addNameTag [ 'express-session', '^1.7.6' ]
+verbose raw, before any munging express-session
+verbose url resolving [ 'https://registry.npmjs.org/', './express-session' ]
+verbose url resolved https://registry.npmjs.org/express-session
+http GET https://registry.npmjs.org/express-session
+ERR! Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+ERR!     at ClientRequest.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/main.js:483:26)
+ERR!     at ClientRequest.g (events.js:156:14)
+ERR!     at ClientRequest.emit (events.js:67:17)
+ERR!     at HTTPParser.onIncoming (http.js:1294:11)
+ERR!     at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:91:29)
+ERR!     at CleartextStream.ondata (http.js:1176:24)
+ERR!     at CleartextStream._push (tls.js:375:27)
+ERR!     at SecurePair.cycle (tls.js:734:20)
+ERR!     at EncryptedStream.write (tls.js:130:13)
+ERR!     at Socket.ondata (stream.js:38:26)
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 3.13.0-37-generic
+ERR! command "node" "/usr/local/bin/npm" "install"
+ERR! cwd /home/ajay/Dropbox/CS_Courses/DMBS/project/v2
+ERR! node -v v0.6.17
+ERR! npm -v 1.1.21
+ERR! message SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+verbose exit [ 1, true ]

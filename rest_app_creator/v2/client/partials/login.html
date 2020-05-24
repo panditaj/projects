@@ -1,0 +1,39 @@
+<form class="form-horizontal" name="loginForm">
+    <fieldset>
+        <legend></legend>
+        <div class="alert alert-danger" ng-show="loginFailed">
+            Username and Password does not match
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Username</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="login.inputUsername" type="text" placeholder="Username" required>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">Password</label>
+
+            <div class="col-lg-10">
+                <input class="form-control" ng-model="login.inputPassword" type="password" placeholder="Password" required>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="col-lg-2 control-label">User Type</label>
+
+            <div class="col-lg-10">
+                <select class="form-control" ng-model="login.userType">
+                    <option value="">--- Choose Role ---</option>
+                    <option value="developer">Developer</option>
+                    <option value="user">User</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default" ng-click="openMainPage('/')">Cancel</button>
+                <button class="btn btn-primary" type="submit" ng-click="validateLogin()">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

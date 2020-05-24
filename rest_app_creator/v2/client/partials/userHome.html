@@ -1,0 +1,19 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend></legend>
+        <div>
+            <button class="btn btn-primary btn-sm" ng-click="logoutUser()">Logout</button>
+            <button class="btn btn-primary btn-sm" ng-click="addApplication()">AppStore</button>
+        </div>
+        <div>&NonBreakingSpace;</div>
+        <div class="panel panel-primary" ng-repeat="application in applications">
+            <div class="panel-heading">
+                {{application.name}}
+            </div>
+            <ul class="nav nav-pills">
+                <li><a class="btn btn-link" ng-click="deleteUserApplication(application._id)">Delete</a></li>
+                <li><a class="btn btn-link" ng-click="executeUserApplication(application._id)">Execute</a></li>
+            </ul>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,24 @@
+<fieldset>
+    <legend></legend>
+    <div>
+        <div class="form-group required">
+            <label class="control-label">Level No</label>
+            <input type="text" class="form-control" ng-model="level.number">
+        </div>
+        <div class="form-group required">
+            <label class="control-label">Level Name</label>
+            <input type="text" class="form-control" ng-model="level.name">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Level Description</label>
+            <input type="text" class="form-control" ng-model="level.description">
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default" ng-click="clearForm()">Clear</button>
+                <button class="btn btn-default" ng-click="cancelForm('/configureResult')">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-click="addResultLevel()">Add</button>
+            </div>
+        </div>
+    </div>
+</fieldset>

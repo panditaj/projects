@@ -1,0 +1,19 @@
+<fieldset>
+    <legend></legend>
+    <div>
+        <button class="btn btn-primary btn-sm" ng-click="back()">Back</button>
+        <button class="btn btn-primary btn-sm" ng-click='addLevel()'>Add data level</button>
+        <div>&NonBreakingSpace;</div>
+        <ul class="list-group">
+            <div class="form-group" ng-repeat="level in resultLevels">
+                <div>
+                    <li class="list-group-item">
+                        <strong><button class="btn-link" ng-click="editLevelName(level._id)">{{level.levelNumber}} -- {{level.levelName}}</button></strong>
+                        <button class="btn-link" style="float: right" ng-click="configureResultLevel(level)">Edit</button>
+                        <button class="btn-link" style="float: right" ng-click="deleteResultLevel(level._id)">Delete</button>
+                    </li>
+                </div>
+            </div>
+        </ul>
+    </div>
+</fieldset>
